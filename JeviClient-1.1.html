@@ -1,19 +1,19 @@
 <script>
-	alert("Jevi 클라이언트 - 실행시작");
+	alert("JeviSync Client - Running");
 	Entry.block.add_value_to_list.func = function(e, t) {
 		var n = t.getField('LIST', t),
 		o = t.getValue('VALUE', t),
 		r = Entry.variableContainer.getList(n, e);
 		return r.array_ || (r.array_ = []), r.array_.push({
 			data: o
-		}), $.get(`%0/?cod=push&_id=${Entry.projectId}&varName=${r.name_}&data=${o}&type=list`, function(data){}), r.updateView(), t.callReturn()
+		}), $.get(`%0/?cod=push&_id=5e001481496153001901da8c&varName=${r.name_}&data=${o}&type=list`, function(data){}), r.updateView(), t.callReturn()
 	};
 
 	Entry.block.set_variable.func = function(t,e){
 		var n = e.getField("VARIABLE",e),
 		o = e.getValue("VALUE",e),
 		r = Entry.variableContainer.getVariable(n,t);
-		return $.get(`%0/?cod=push&_id=${Entry.projectId}&varName=${r.name_}&data=${o}&type=var`, function(data){}),
+		return $.get(`%0/?cod=push&_id=5e001481496153001901da8c&varName=${r.name_}&data=${o}&type=var`, function(data){}),
 		e.callReturn()
 	}
 
@@ -34,11 +34,11 @@
 			}
 
 			if(type=="list"){
-				$.get(`%0/?cod=get&type=${type}&_id=${Entry.projectId}&varName=${getOpt[0]}`, function(_d) {
+				$.get(`%0/?cod=get&type=${type}&_id=5e001481496153001901da8c&varName=${getOpt[0]}`, function(_d) {
 					Entry.variableContainer.getListByName(_d.result.varn).setArray(_d.basic.concat(_d.result._data));
 				});
 			}else if(type=="var"){
-				$.get(`%0/?cod=get&type=${type}&_id=${Entry.projectId}&varName=${getOpt[0]}`, function(_d) {
+				$.get(`%0/?cod=get&type=${type}&_id=5e001481496153001901da8c&varName=${getOpt[0]}`, function(_d) {
 					Entry.variableContainer.getVariableByName(_d.result.varn).setValue(_d.result._data[_d.basic[3].data][_d.result.varn]);
 				});
 			}

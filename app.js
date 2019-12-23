@@ -43,7 +43,7 @@ app.get('/reg', (req, res) => {
 
 app.get('/', (req, res) => {
 	crypto.pbkdf2(req.ip, '궥2s샳3운횥', 4937, 16, 'sha256', (err, key) => {
-		basic = [{data:"JVstart"},{data:ServerName},{data:ServerVersion},{data:key.toString('base64')}];
+		basic = [{data:"SYNCstart"},{data:ServerName},{data:ServerVersion},{data:key.toString('base64')}];
 		if(!(stor[req.query._id + '_' + req.query.varName])){
 			stor[req.query._id + '_' + req.query.varName] = [];
 		}
