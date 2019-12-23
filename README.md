@@ -1,2 +1,2 @@
 # JeviSync
-Jevi for Cross-Project Sync
+Jevi server for Cross-Project Sync
