@@ -2,7 +2,7 @@ const args = process.argv;
 
 const ServerName = args[2];// "Andecola"
 const ServerLink = args[3];// "http://jevi.ga:3000"
-const ServerVersion = "1.1.0";
+const ServerVersion = "1.0.0";
 
 const moment = require('moment');
 
@@ -70,8 +70,8 @@ app.get('/', (req, res) => {
 });
 
 var ScriptInst = {
-	"1.0":fs.readFileSync('JeviClient-1.0.html', 'utf8').replace(/%0/g,ServerLink),
-	"1.1":fs.readFileSync('JeviClient-1.1.html', 'utf8').replace(/%0/g,ServerLink),
+	"1.0":fs.readFileSync('SYNCClient-1.0.html', 'utf8').replace(/%0/g,ServerLink),
+	"1.1":fs.readFileSync('SYNCClient-1.1.html', 'utf8').replace(/%0/g,ServerLink),
 };
 
 app.get('/install', (req, res) => {
