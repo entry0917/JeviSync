@@ -1,1 +1,1 @@
-web: node ./app.js JeviSync https://jevisync.herokuapp.com
+web: node ./app.js JeviSync https://jeviup.herokuapp.com
